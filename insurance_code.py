@@ -108,3 +108,9 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
 print("\nROC AUC Score:", roc_auc_score(y_test, y_proba))
 print("Accuracy:", accuracy_score(y_test, y_pred))
+
+
+rf = RandomForestClassifier(n_estimators=100, oob_score=True, random_state=42)
+rf.fit(X_train, y_train)
+
+print(f"OOB Score: {rf.oob_score_}")
