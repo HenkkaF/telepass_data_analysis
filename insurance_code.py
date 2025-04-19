@@ -79,7 +79,6 @@ for name, model in models.items():
     if y_proba is not None:
         print("ROC AUC Score:", roc_auc_score(y_test, y_proba))
 
-
 # Best i got
 
 model = RandomForestClassifier(class_weight={0:1, 1:3}, random_state=42)
@@ -108,7 +107,6 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
 print("\nROC AUC Score:", roc_auc_score(y_test, y_proba))
 print("Accuracy:", accuracy_score(y_test, y_pred))
-
 
 rf = RandomForestClassifier(n_estimators=100, oob_score=True, random_state=42)
 rf.fit(X_train, y_train)
